@@ -13,7 +13,7 @@ export const searchJobs = text => dispatch =>{
 // getting list of jobs from the json
 export const fetchJobs = (page = 0, location = '', fulltime = 'false', description='', text) => dispatch => {
     axios
-    .get(`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?${text}description=${description}&full_time=${fulltime}e&location=${location}&page=${page}`)
+    .get(`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?`)
     .then(response => dispatch({
         type: FETCH_JOBS,
         payload: response.data
