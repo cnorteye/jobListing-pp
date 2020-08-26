@@ -8,14 +8,15 @@ export class JobsContainer extends Component {
         const { jobs } = this.props;
         let content = '';
 
-        content = 
-        jobs.Response === 'True' ? jobs.Search.map((job, index) => (
-            <JobDisplay key={index} job={job} />
-        ))
-        : null;
+        content =
+        jobs.Response === 'True'
+          ? job.Search.map((job, index) => (
+              <JobDisplay key={index} job={job} />
+            ))
+          : null;
         
         return (
-            <div >
+            <div className='row'>
                 {content}
             </div>
         )

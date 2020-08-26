@@ -15,10 +15,10 @@ export default class Navbar extends Component {
           <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
               <li className="nav-item active">
-                <a className="nav-link" href="#">Find jobs <span class="sr-only">(current)</span></a>
+                <a className="nav-link" href="#">Find jobs <span className="sr-only">(current)</span></a>
               </li>
               <li className="nav-item active">
-                <a className="nav-link" href="#">Upload your resume <span class="sr-only">(current)</span></a>
+                <a className="nav-link" href="#">Upload your resume <span className="sr-only">(current)</span></a>
               </li>
             </ul>
             <form className="form-inline my-2 my-lg-0">

@@ -27,10 +27,19 @@ export class SearchForm extends Component {
                     <div className="input-group mb-3">      
                         <input 
                         type="text" 
-                        class="form-control"
+                        className="form-control"
                         name='searchJob'
                         placeholder='Search Jobs...'
                         onChange={this.onChange}/>
+                        </div>
+                        <div className="input-group mb-3">      
+                        <input 
+                        type="text" 
+                        className="form-control"
+                        name='jobLocation'
+                        placeholder='Location'
+                        //onChange={this.onChange}
+                        />
                         </div>
                 <button type='submit' className='btn btn-primary btn-bg mt-6'>
                     Find Job

@@ -6,7 +6,7 @@ const initialState = {
     text: '',
     jobs: [],
     loading: false,
-    job: []
+    //job: []
 };
 
 // update store based on type and payload and return the state
