@@ -1,23 +1,40 @@
-import { FETCH_JOBS, SEARCH_JOB} from './types';
+import { SEARCH_JOB, FETCH_JOBS, FETCH_JOB, LOADING} from './types';
 import axios from 'axios';
 
-
-export const searchJob = text => dispatch => {
+// type into search input for the job
+export const searchJobs = text => dispatch =>{
     dispatch({
-        type: SEARCH_JOB, 
-        paylod: text
+        type: SEARCH_JOB,
+        payload: text
     });
 };
 
-export const getJobs = text => dispatch => {
-    axios
-        .get('https://jobs.github.com/positions.json?')
-        .then(response => dispatch({
-            type: FETCH_JOBS, 
-            paylod: response.data
-        })
-        
-        )
-        .catch(err => console.log(err));
 
-}
+// getting list of jobs from the json
+export const fetchJobs = (page = 0, location = '', fulltime = 'false', description='', text) => dispatch => {
+    axios
+    .get(`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?${text}description=${description}&full_time=${fulltime}e&location=${location}&page=${page}`)
+    .then(response => dispatch({
+        type: FETCH_JOBS,
+        payload: response.data
+    })
+    )
+    .catch(err => console.log(err));
+};
+
+export const fetchJob = (id = 0) => dispatch => {
+    axios
+    .get(`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions/${id}.json`)
+    .then(response => dispatch({
+        type: FETCH_JOB,
+        payload: response.data
+    })
+    )
+    .catch(err => console.log(err));
+};
+
+export const setLoading = () => {
+    return{
+        type: LOADING
+    };
+};
