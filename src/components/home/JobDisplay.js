@@ -81,7 +81,7 @@ class JobDisplay extends Component {
                                 <li>Vacancy: <span></span></li>
                                 <li>Salary: <span>50k - 120k/y</span></li>
                                 <li>Location: <span>California, USA</span></li>
-                                <li>Job Nature: <span> {job.type}</span></li>
+                                <li>Job Nature: <span></span></li>
                             </ul>
                         </div>
                     </div>
